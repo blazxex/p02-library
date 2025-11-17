@@ -85,9 +85,7 @@ exports.createReservation = async (req, res, next) => {
     }
 
     // Validation: reservation date must not be earlier than today
-    //const today = new Date();
-    const now = new Date();
-    const today = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Bangkok" }));
+    const today = new Date();
     today.setHours(0, 0, 0, 0);
     const borrowDate = new Date(req.body.borrowDate);
     const pickupDate = new Date(req.body.pickupDate);
